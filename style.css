@@ -57,6 +57,8 @@ html {
   border-radius: 15px;
   height: 100vh;
   color: darkgreen;
+  display:flex;
+  flex-direction:column;
   text-decoration: none;
   top: 0;
   bottom: 0;
