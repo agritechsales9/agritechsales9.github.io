@@ -175,9 +175,8 @@ html {
   border-radius: 20px;
   box-shadow: black 2px ;
   width: 70%;
-  position: fixed;
+  position: relative;
   bottom: 11vw;
-  left: 15vw;
 }
 #chat-send {
   color:rgb(4, 112, 4);
