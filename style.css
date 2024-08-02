@@ -131,7 +131,6 @@ html {
   background: transparent;
   backdrop-filter: blur(7px);
   text-align: center;
-  position: fixed;
   top: 4vw;
   right: 27vw;
 }
