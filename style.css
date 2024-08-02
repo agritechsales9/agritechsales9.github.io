@@ -177,7 +177,7 @@ html {
   width: 70%;
   position: fixed;
   bottom: 11vw;
-  *left: 15vw;
+  left: 15vw;
 }
 #chat-send {
   color:rgb(4, 112, 4);
