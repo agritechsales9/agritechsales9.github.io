@@ -56,9 +56,6 @@
     <div>
       
       <section id="two">
-        <span id="back"><span class="material-symbols-outlined">
-        arrow_back_ios
-        </span></span>
          <h4 id="chat-title"></h4>
         <div id="chat-holder"></div>
             <div>
@@ -457,10 +454,17 @@ holder.querySelectorAll("p").forEach((paragraph) => {
 
     const messagesQuery = query(ref(db, 'chat/'), orderByChild('timestamp'));
     const stylesTo = {
-      background: 'lightblue'
+      background: 'lightblue',
+      margin: '5px',
+      borderRadius: '30px',
+      borderBottomLeftRadius:'0'
+      
     };
     const stylesFro = {
-      background: 'lightgreen'
+      background: 'lightgreen',
+      margin: '5px',
+      borderRadius: '30px',
+      borderBottomRightRadius:'0'
     };
 
     onValue(messagesQuery, (snapshot) => {
