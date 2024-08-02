@@ -1,0 +1,346 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+.topp{
+  top: 0;
+  width: 100%;
+  height: 20vh;
+  background: linear-gradient(to right, rgba(0,150,50,0.9), rgba(0,100,70,0.5));
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  *left: 300px;
+}
+.topp button {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  outline: none;
+  border: dotted 4px black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: black;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+.topp button:hover {
+  font-size: 1.3em;
+  background: rgba(0, 0, 0,0.5);
+  border: none;
+  color: #ffffff;
+
+}
+
+#search {
+  color: white;
+  border-radius: 15px;
+  background: transparent;
+  border: 2px dashed white;
+  margin-left: 20px;
+  padding: 10px;
+}
+#sell {
+  background-color: #ffffff;
+  background: url(c6b4e99100d5d3de0b5b8d260fd28026.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  font-size: 2vw;
+  border-radius: 15px;
+  height: 100vh;
+  color: darkgreen;
+  text-decoration: none;
+  top: 0;
+  bottom: 0;
+}
+#sell button {
+  font-size: 2vw;
+  font-weight: 700;
+  padding: 10px 20px;
+  background: black;
+  border: none;
+  color: #ffffff;
+  border-radius: 15px;
+  transition: .5s;
+}
+#sell button:hover {
+  background: transparent;
+  backdrop-filter: blur(6px);
+  font-size: 2.5vw;
+  border: solid 2px green;
+  *-webkit-text-stroke: 1px darkgreen;
+  color: green;
+}
+#click {
+  *display:grid;
+}
+*#sell .choose {
+  margin-left: 40px;
+  margin-bottom: 5px;
+  border: dashed 3px green;
+  background: transparent;
+  border-radius: 15px;
+  padding: 5px 5px;
+  width: 90%;
+  height: 10vw;
+  backdrop-filter: blur(5px);
+}
+#backimg {
+  margin-left: 40px;
+  margin-bottom: 5px;
+  border: dashed 3px green;
+  background: transparent;
+  border-radius: 15px;
+  padding: 5px 5px;
+  width: 50%;
+  height: 19vw;
+  backdrop-filter: blur(5px);
+}
+#imge-files {
+  color: darkgreen;
+  font-size: 1.5vw;
+}
+#product-name {
+  border-radius: 15px;
+  padding: 10px;
+  border: dashed 2px rgba(17, 14, 14,0.5);
+  background: transparent;
+  backdrop-filter: blur(7px);
+  text-align: center;
+}
+#product-price {
+  border-radius: 15px;
+  padding: 10px;
+  border: dashed 2px rgba(17, 14, 14,0.5);
+  background: transparent;
+  backdrop-filter: blur(7px);
+  text-align: center;
+}
+#product-description {
+  border-radius: 15px;
+  padding: 10px 10px;
+  border: dashed 2px rgba(17, 14, 14,0.5);
+  background: transparent;
+  backdrop-filter: blur(7px);
+  text-align: center;
+  position: fixed;
+  top: 4vw;
+  right: 27vw;
+}
+
+#chat {
+  text-align: center;
+  background: url(3.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+}
+#content-holder {
+  *background: red;
+  
+}
+#chatters {
+  background: green;
+  border-radius: 15px;
+}
+#chat-holder {
+  *background: rgb(153, 245, 149);
+  border-radius: 15px;
+  text-align: center;
+  position: fixed;
+  left: 30vw;
+  width: 500px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 1.5vw;
+}
+#chat-messages {
+  text-align: center;
+  border: dashed 2px green;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: black 2px ;
+  width: 70%;
+  position: fixed;
+  bottom: 11vw;
+  left: 15vw;
+}
+#chat-send {
+  color:rgb(4, 112, 4);
+  border: none;
+  padding: 10px;
+  background: transparent;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 9.6vw;
+  right: 15vw;
+}
+#chat-send .material-symbols-outlined {
+  font-size: 3.5vw;
+  text-align: center;
+  transition: .5s;
+}
+#chat-send .material-symbols-outlined:hover {
+  font-size: 4vw;
+  color:rgb(17, 170, 11);
+}
+.trouble {
+  background: transparent;
+  bottom: 2vw;
+
+}
+nav{
+  position: fixed;
+  display: flex;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to left, rgba(0,150,50,0.9), rgba(0,100,70,0.5));
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+nav button {
+  gap: 5px;
+  width: 33.33%;
+  text-decoration: none;
+  background: transparent;
+  *color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin-left: 30px;
+  border: none;
+}
+nav button p{
+  font-size: 15px;
+  align-self: center;
+  color: white;
+  background: transparent;
+  padding: 10px;
+  border-radius: 100%;
+}
+nav button p:hover {
+  color: rgb(0, 0, 0);
+  font-size: 2.2vw;
+}
+#prog-bar{
+  width:0; 
+height: 20px; 
+  background: teal;
+}
+.cards{
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  display: none;
+  bottom: 3vw;
+  overflow-y: auto;
+}
+img {
+  *height: 20vw;
+  border: solid 7px rgba(27, 194, 116,0.4);
+  max-width: 100%;
+  border-radius: 15px;
+  transition: .3s;
+}
+img:hover {
+  max-width: 98%;
+}
+#home{
+  display: block;
+  background: url(R\ \(3\).png);
+}
+#price {
+  color: red;
+}
+.alert-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  z-index: 2000;
+}
+
+#holder {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  position: absolute;
+  width: 100%;
+  top: 10vh;
+  bottom: 3vh;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 10px;
+  *height:70vh;
+  overflow-y:auto;
+}
+#holder a {
+  color: white;
+  text-decoration: none;
+  background: red;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+  #holder {
+      width: calc(100% - 40px);
+      columns: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  #holder {
+      columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  #holder {
+      columns: 1;
+  }
+}
+}
+@keyframes animate {
+  0% {
+      background: rgba(0, 0, 0,0.5);
+      color: white;
+  }
+  25% {
+    background: rgba(0, 0, 0,0.7);
+    color: rgb(130, 231, 189);
+  }
+  50% {
+    background: rgba(0, 0, 0,0.9);
+    color: rgb(6, 146, 25);
+  }
+  75%{
+    background: rgba(0, 0, 0,0.7);
+    color: rgb(130, 231, 189);
+  }
+  100%{
+    background: rgba(0, 0, 0,0.5);
+    color: white;
+  }
+}
