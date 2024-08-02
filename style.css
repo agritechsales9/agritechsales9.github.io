@@ -163,8 +163,7 @@ html {
   border-radius: 15px;
   text-align: center;
   position: fixed;
-  *left: 30vw;
-  width: 500px;
+  width: 100%;
   margin: 5px;
   padding: 5px;
   font-size: 2vw;
@@ -188,7 +187,6 @@ html {
   border-radius: 100%;
   position: fixed;
   bottom: 11vh;
-  right: 15vw;
 }
 #chat-send .material-symbols-outlined {
   font-size: 3.5vw;
