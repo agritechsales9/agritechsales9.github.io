@@ -160,11 +160,11 @@ html {
   border-radius: 15px;
   text-align: center;
   position: fixed;
-  left: 30vw;
+  *left: 30vw;
   width: 500px;
   margin: 5px;
   padding: 5px;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 #chat-messages {
   text-align: center;
@@ -175,7 +175,7 @@ html {
   width: 70%;
   position: fixed;
   bottom: 11vw;
-  left: 15vw;
+  *left: 15vw;
 }
 #chat-send {
   color:rgb(4, 112, 4);
