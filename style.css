@@ -52,7 +52,7 @@ html {
   border: 2px dashed white;
   margin-left: 20px;
   padding: 10px;
-  transition: all 2s;
+  transition: all .5s;
 }
 #search:hover{
   width: 150px;
@@ -187,7 +187,7 @@ html {
   box-shadow: black 2px ;
   width: 70%;
   position: fixed;
-  bottom: 20vw;
+  bottom: 20vh;
 }
 #chat-send {
   color:rgb(4, 112, 4);
@@ -195,9 +195,9 @@ html {
   padding: 10px;
   background: transparent;
   border-radius: 100%;
-  width: 100%;
+  width: 25%;
   position: fixed;
-  bottom: 11vh;
+  bottom: 20vh;
 }
 #chat-send .material-symbols-outlined {
   font-size: 3.5vw;
