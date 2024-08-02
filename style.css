@@ -187,7 +187,7 @@ html {
   background: transparent;
   border-radius: 100%;
   position: fixed;
-  bottom: 9.6vw;
+  bottom: 11vh;
   right: 15vw;
 }
 #chat-send .material-symbols-outlined {
