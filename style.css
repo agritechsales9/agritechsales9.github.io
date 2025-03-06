@@ -59,12 +59,11 @@ html {
 }
 #sell {
   background-color: #ffffff;
-  background: url(c6b4e99100d5d3de0b5b8d260fd28026.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   text-align: center;
   font-size: 1.5vw;
-  overflow-y: auto;
+  overflow: auto;
   border-radius: 15px;
   height: 100vh;
   color: darkgreen;
@@ -114,6 +113,7 @@ html {
 #imge-files {
   color: darkgreen;
   font-size: 1.5vw;
+  opacity: 0;
 }
 #product-name {
   border-radius: 15px;
@@ -154,9 +154,6 @@ html {
   top: 0;
   bottom: 0;
 }
-#content-holder {
- 
-}
 #chatters {
   background: green;
   border-radius: 15px;
@@ -167,6 +164,7 @@ html {
   width: 100%;
   height: 80vh;
   font-size: 1.5rem;
+  top: 0;
 }
 .chat-message-sender-holder {
   width: 100%;
@@ -274,7 +272,6 @@ img:hover {
 }
 #home{
   display: block;
-  background: url(R\ \(3\).png);
 }
 #price {
   color: red;
