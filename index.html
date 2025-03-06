@@ -458,21 +458,29 @@ holder.querySelectorAll("p").forEach((paragraph) => {
     const messagesQuery = query(ref(db, 'chat/'), orderByChild('timestamp'));
     const stylesTo = {
       background: 'lightblue',
+      position: 'fixed',
+      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 13% 100%, 12% 10%)',
+      left: '0',
+      width: 'auto',
       margin: '5px',
-      borderRadius: '30px',
+      borderRadius: '10px',
       borderBottomLeftRadius:'0',
       fontSize: '1em',
-      padding: '10px',
+      padding: '15px',
       display: 'flex'
       
     };
     const stylesFro = {
-      background: 'lightgreen',
+     background: 'lightgreen',
+      position: 'fixed',
+      clipPath: 'polygon(100% 0, 90% 10%, 90% 100%, 0 100%, 0 0)',
+      right: '0',
+      width: 'auto',
       margin: '5px',
-      borderRadius: '30px',
-      borderBottomRightRadius:'0',
-      padding: '10px',
+      borderRadius: '10px',
+      borderBottomLeftRadius:'0',
       fontSize: '1em',
+      padding: '15px',
       display: 'flex'
     };
 
