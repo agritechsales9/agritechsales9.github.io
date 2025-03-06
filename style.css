@@ -65,12 +65,11 @@ html {
   font-size: 1.5vw;
   overflow: auto;
   border-radius: 15px;
-  height: 100vh;
+  height: 90vh;
   color: darkgreen;
   display:none;
   text-decoration: none;
   top: 0;
-  bottom: 0;
 }
 #sell button {
   width: 150px;
@@ -110,6 +109,15 @@ html {
   height: 200px;
   backdrop-filter: blur(5px);
 
+}
+.note {
+  position: absolute;
+  z-index: -1;
+  max-width: 400px;
+  height: 200px;
+  display: grid;
+  place-content: center;
+  font-size: 3rem;
 }
 #imge-files {
   color: darkgreen;
