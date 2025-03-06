@@ -36,7 +36,7 @@
   <!--page two-->
   <div id="alert-box" class="alert-box"></div>
   <div class="cards" id="sell">
-    <div id="innersell">
+    
           <div>
               <div id="prog-bar"></div>
           </div>
@@ -52,7 +52,7 @@
       <button id="poster">POST</button>
     </div>
 
-      </div>
+      
   </div>
   <!--page three-->
   <div class="cards" id="chat">
@@ -458,7 +458,7 @@ holder.querySelectorAll("p").forEach((paragraph) => {
     const messagesQuery = query(ref(db, 'chat/'), orderByChild('timestamp'));
     const stylesTo = {
       background: 'lightblue',
-      position: 'fixed',
+      position: 'static',
       clipPath: 'polygon(0 0, 100% 0, 100% 100%, 13% 100%, 12% 10%)',
       left: '0',
       width: 'auto',
@@ -472,7 +472,7 @@ holder.querySelectorAll("p").forEach((paragraph) => {
     };
     const stylesFro = {
      background: 'lightgreen',
-      position: 'fixed',
+      position: 'static',
       clipPath: 'polygon(100% 0, 90% 10%, 90% 100%, 0 100%, 0 0)',
       right: '0',
       width: 'auto',
