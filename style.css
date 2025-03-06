@@ -68,8 +68,7 @@ html {
   border-radius: 15px;
   height: 100vh;
   color: darkgreen;
-  display:flex;
-  flex-direction:column;
+  display:none;
   text-decoration: none;
   top: 0;
   bottom: 0;
@@ -140,6 +139,8 @@ html {
   text-align: center;
   top: 4vw;
   right: 27vw;
+  width: 400px;
+  height: 250px;
 }
 
 #chat {
