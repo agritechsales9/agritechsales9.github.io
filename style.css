@@ -63,7 +63,7 @@ html {
   background-position: center;
   background-size: cover;
   text-align: center;
-  font-size: 2vw;
+  font-size: 1.5vw;
   overflow-y: auto;
   border-radius: 15px;
   height: 100vh;
@@ -75,7 +75,7 @@ html {
   bottom: 0;
 }
 #sell button {
-  font-size: 2vw;
+  font-size: 1.5vw;
   font-weight: 500;
   padding: 10px 20px;
   background: black;
@@ -87,21 +87,16 @@ html {
 #sell button:hover {
   background: transparent;
   backdrop-filter: blur(6px);
-  font-size: 2.1vw;
+  font-size: 1.7vw;
   border: solid 2px green;
   color: green;
 }
-
-*#sell .choose {
-  margin-left: 40px;
-  margin-bottom: 5px;
-  border: dashed 3px green;
-  background: transparent;
-  border-radius: 15px;
-  padding: 5px 5px;
-  width: 90%;
-  height: 10vw;
-  backdrop-filter: blur(5px);
+#sell h3 {
+  width: 100%;
+  height: 15vh;
+  text-align: left;
+  font-size: 2rem;
+  padding: 30px;
 }
 #backimg {
   margin-left: 40px;
@@ -112,8 +107,8 @@ html {
   background: transparent;
   border-radius: 15px;
   padding: 5px 5px;
-  width: 50%;
-  height: 19vw;
+  max-width: 400px;
+  height: 200px;
   backdrop-filter: blur(5px);
 }
 #imge-files {
@@ -174,10 +169,21 @@ html {
   padding: 5px;
   font-size: 1.5rem;
 }
+.chat-message-sender-holder {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  bottom: 10vh;
+}
 #chat-messages {
   padding: 10px;
+  padding-left: 20px;
+  border: 1px solid lightgreen;
   border-radius: 20px;
-  box-shadow: black 2px ;
   width: 70%;
 }
 #chat-send {
