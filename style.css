@@ -109,6 +109,7 @@ html {
   max-width: 400px;
   height: 200px;
   backdrop-filter: blur(5px);
+
 }
 #imge-files {
   color: darkgreen;
