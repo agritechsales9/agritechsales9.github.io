@@ -24,3 +24,19 @@ function chatter() {
    const urName = document.getElementById("name-holder");
 
 }
+var searchBar = document.querySelector('#search');
+var contentHolder = document.querySelector('.holder');
+
+searchBar.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        var products = contentHolder.querySelectorAll('.product');
+        products.forEach(element => {
+             if (!element.textContent == searchBar.value) {
+            element.style.display = "none";
+        } else {
+                 element.style.display = "block"
+        }
+        });
+       
+    }
+});
