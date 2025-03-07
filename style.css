@@ -57,6 +57,20 @@ html {
 #search:hover{
   width: 150px;
 }
+.copyright {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  border-radius: 100% 0% 23% 77% / 14% 100% 0% 86% ;
+  padding: 30px;
+  width: 150px;
+  height: auto;
+  border: 1px solid white;
+  font-size: 0.5rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
 #sell {
   background-color: #e7dbcd;
   background-position: center;
