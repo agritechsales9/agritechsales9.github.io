@@ -64,10 +64,10 @@ html {
   z-index: 1000;
   border-radius: 100% 0% 23% 77% / 14% 100% 0% 86% ;
   padding: 30px;
-  width: 150px;
+  width: 200px;
   height: auto;
   border: 1px solid white;
-  font-size: 0.5rem;
+  font-size: 1rem;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
