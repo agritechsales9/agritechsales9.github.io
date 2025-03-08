@@ -344,6 +344,7 @@ img {
   margin: 20px auto;
   overflow-y: auto;
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
 }
