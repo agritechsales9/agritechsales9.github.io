@@ -13,49 +13,39 @@ html {
   border-radius: 10px;
 }
 .topp{
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 20vh;
-  background: linear-gradient(to right, rgba(0,150,50,0.9), rgba(0,100,70,0.5));
+  height: 10vh;
+  background: linear-gradient(to right, rgb(0,150,50), rgb(0,100,7));
   display: flex;
   align-items: center;
-  padding: 30px;
-  *left: 300px;
+  justify-content: space-between;
 }
-.topp button {
-  width: 130px;
-  height: 50px;
-  background: transparent;
-  outline: none;
-  border: dotted 4px black;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1em;
-  color: black;
-  font-weight: 500;
-  margin-left: 40px;
-  transition: .5s;
+.headimg{
+   width: 100%;
+  height: 100%;
+    display: flex;
+  align-items: center;
+  
 }
-.topp button:hover {
-  font-size: 1.3em;
-  background: rgba(0, 0, 0,0.5);
-  border: none;
-  color: #ffffff;
-
+.headimg img{
+  height: 80%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  margin: 10px;
 }
-
 #search {
   color: white;
   border-radius: 15px;
-  width: 30px;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  margin: 20px;
+  width: 200px;
   border: 2px dashed white;
-  margin-left: 20px;
   padding: 10px;
   transition: all .5s;
-}
-#search:hover{
-  width: 150px;
+  
 }
 .copyright {
   position: fixed;
@@ -75,16 +65,35 @@ html {
   background-color: #e7dbcd;
   background-position: center;
   background-size: cover;
-  text-align: center;
   font-size: 1.5vw;
   overflow: auto;
-  border-radius: 15px;
   height: 90vh;
   color: darkgreen;
-  display:none;
-  text-decoration: none;
-  top: 0;
+  display: block;
 }
+.sellHolder{
+  overflow: auto;
+  width: 100%;
+  height: 80vh;
+  display:flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+  columns: 2;
+}
+.uploadpart, .previewpart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  overflow-y: auto;
+}
+/*.uploadpart{
+  position: fixed;
+  top: 5.2vh;
+}*/
 #innersell {
   width: 100%;
   height: 85vh;
@@ -105,32 +114,30 @@ html {
   transition: .5s;
 }
 #sell button:hover {
-  background: transparent;
+  background: rgba(101, 99, 99, 0.5);
   backdrop-filter: blur(6px);
-  font-size: 1.7vw;
   border: solid 2px green;
   color: green;
 }
 #sell h3 {
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   text-align: left;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 30px;
   color: white;
   background: rgba(0,150,50,0.9);
 }
 #backimg {
-  margin-left: 40px;
-  margin-bottom: 5px;
-  border: dashed 3px green;
+
+  border: none;
   object-fit: cover;
   overflow: hidden;
   background: transparent;
   border-radius: 15px;
   padding: 5px 5px;
-  max-width: 400px;
-  height: 200px;
+  width: 100%;
+  height: 210px;
   backdrop-filter: blur(5px);
  display: inline-block;
 }
@@ -141,7 +148,11 @@ html {
   height: 100%;
   display: grid;
   place-content: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+}
+.product{
+  width: 240px;
+  height: 350px;
 }
 #imge-files {
   color: darkgreen;
@@ -149,6 +160,7 @@ html {
   opacity: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 #product-name {
   border-radius: 15px;
@@ -176,6 +188,7 @@ html {
   top: 4vw;
   right: 27vw;
   width: 400px;
+  display: none;
   height: 150px;
 }
 
@@ -249,7 +262,7 @@ nav{
   display: flex;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(to left, rgba(0,150,50,0.9), rgba(0,100,70,0.5));
+  background: linear-gradient(to left, rgb(0,150,50), rgb(0,100,70));
   bottom: 0;
   left: 0;
   right: 0;
@@ -267,7 +280,8 @@ nav button {
   margin-left: 30px;
   border: none;
 }
-nav button p{
+nav button a{
+  text-decoration: none;
   font-size: 15px;
   align-self: center;
   color: white;
@@ -280,7 +294,8 @@ nav button p:hover {
   font-size: 2.2vw;
 }
 #prog-bar{
-  bottom: 10vh;
+  position: fixed;
+  top: 0;
   width:0; 
 height: 20px; 
   background: teal;
