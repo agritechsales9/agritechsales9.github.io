@@ -361,8 +361,7 @@ nav{
   right: 0;
 }
 nav button {
-  gap: 5px;
-  width: 33.33%;
+  width: 10%;
   text-decoration: none;
   background: transparent;
   display: flex;
@@ -382,9 +381,9 @@ nav button a{
   padding: 10px;
   border-radius: 100%;
 }
-nav button p:hover {
+nav button a:hover {
   color: rgb(0, 0, 0);
-  font-size: 2.2vw;
+  font-size: 1rem;
 }
 #prog-bar{
   position: fixed;
@@ -475,14 +474,18 @@ height: 5px;
 }
 .btn-container .mail-real{
   width: 50%;
-  background-color: rgb(5, 91, 211);
+  background: rgb(5, 91, 211);
   border-bottom-left-radius: 10px;
+  display: grid;
+  place-content: center;
   
 }
 .btn-container .whatsapp-real{
   width: 50%;
-  background-color: rgb(5, 211, 91);
+  background: rgb(5, 211, 91);
   border-bottom-right-radius: 10px;
+  display: grid;
+  place-content: center;
 }
 #home{
   display: block;
