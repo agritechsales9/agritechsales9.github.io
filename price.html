@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="price.css"/>
+
+      <title>AGRI_TECH SALES</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="Untitled design.png"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+ 
+  <style>
+  
+  </style>
+</head>
+<body class="ubuntu-regular">
+ <div class="topp">
+      <div class="headimg">
+         <img src="Untitled design.png"/>
+        <h2 class="tektur-text">AGRI_TECH INTERNATIONAL PRICING DASHBOARD</h2>
+      </div>
+    </div>
+
+  <main>
+    <div class="chart-container">
+      <h2>Maize Prices</h2>
+      <canvas id="maizeChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Rice Prices</h2>
+      <canvas id="riceChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Wheat Prices</h2>
+      <canvas id="wheatChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Soybean Prices</h2>
+      <canvas id="soybeanChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Coffee Prices</h2>
+      <canvas id="coffeeChart"></canvas>
+    </div>
+
+    <section>
+      <h2>Other Crop Prices</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Crop</th>
+            <th>Current Price (USD/ton)</th>
+            <th>Last Month</th>
+            <th>Last Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sugarcane</td><td>420</td><td>415</td><td>390</td></tr>
+          <tr><td>Cassava</td><td>320</td><td>310</td><td>295</td></tr>
+          <tr><td>Barley</td><td>470</td><td>450</td><td>430</td></tr>
+          <tr><td>Millet</td><td>300</td><td>295</td><td>280</td></tr>
+          <tr><td>Peanuts</td><td>850</td><td>825</td><td>800</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+<nav>
+    <button id="to-home">
+      <a href="main.html"><span class="material-symbols-outlined">home</span></a>
+      
+    </button>
+    <button id="to-sell">
+      <a href="productadd.html"><span class="material-symbols-outlined">add_circle</span></a>
+      
+    </button>
+    <button id="to-chat">
+      <a href="chat.html"><span class="material-symbols-outlined">chat</span></a>
+      
+    </button>
+    </button>
+    <button>
+      <a href="weather.html"><span class="material-symbols-outlined">
+cloud
+</span></a>
+      
+    </button>
+    <button>
+      <a href="calender.html"><span class="material-symbols-outlined">
+calendar_month
+</span></a>
+      
+    </button>
+    <button style="background: rgb(79, 191, 71);">
+      <a href="price.html"><span class="material-symbols-outlined">
+finance_mode
+</span></a>
+      
+    </button>
+    <button>
+      <a href="account.html"><span class="material-symbols-outlined">
+account_circle
+</span></a>
+      
+    </button>
+  </nav>
+  <script>
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+
+    const chartData = (label, data, color) => ({
+      labels,
+      datasets: [{
+        label,
+        data,
+        borderColor: color,
+        backgroundColor: color,
+        fill: false,
+        tension: 0.3
+      }]
+    });
+
+    const renderChart = (id, label, data, color) => {
+      new Chart(document.getElementById(id), {
+        type: 'line',
+        data: chartData(label, data, color),
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'top' },
+          },
+          scales: {
+            y: {
+              beginAtZero: false
+            }
+          }
+        }
+      });
+    };
+
+    renderChart('maizeChart', 'Maize', [220, 225, 230, 240, 235, 245, 250], '#ff9800');
+    renderChart('riceChart', 'Rice', [410, 420, 430, 440, 438, 442, 445], '#4caf50');
+    renderChart('wheatChart', 'Wheat', [500, 510, 520, 515, 525, 530, 540], '#2196f3');
+    renderChart('soybeanChart', 'Soybeans', [690, 700, 710, 705, 715, 725, 735], '#9c27b0');
+    renderChart('coffeeChart', 'Coffee', [880, 890, 895, 900, 910, 920, 930], '#795548');
+  </script>
+</body>
+</html>
