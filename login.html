@@ -45,8 +45,8 @@
   </div>
 
   <div>
-          <h5 class="ubuntu-regular">© Copyright Ndejje SSS</h5>
-          <p class="ubuntu-regular">FUNTOM SOFTWARE</p>
+          
+          <p class="ubuntu-regular">© Copyright Ndejje SSS</p>
         </div>
   <section class="wave-holder">
     <div class="custom-shape-divider-bottom-1751546375">
@@ -56,14 +56,13 @@
     </div>
   </section>
 
-  <!-- ✅ Add Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  <!-- ✅ Firebase Login Logic -->
+  
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyC7fCNZe8l-fGhhKsMF0JVcymh8uCv1zyI",
@@ -78,6 +77,12 @@
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+
+      onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.href = 'main.html';
+  } 
+});
 
     const loginBtn = document.querySelector('#login_btn');
     const emailInput = document.querySelector('#login_name');
