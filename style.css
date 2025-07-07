@@ -1,7 +1,24 @@
+
+.tektur-text {
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body{
+  padding: 0;
 }
 html {
   height: 100%;
@@ -15,6 +32,7 @@ html {
 .topp{
   position: fixed;
   top: 0;
+  z-index: 1;
   width: 100%;
   height: 10vh;
   background: linear-gradient(to right, rgb(0,150,50), rgb(0,100,7));
@@ -27,13 +45,22 @@ html {
   height: 100%;
     display: flex;
   align-items: center;
-  
+  color: white;
 }
 .headimg img{
   height: 80%;
   aspect-ratio: 1/1;
   border-radius: 100%;
   margin: 10px;
+}
+.letterhold{
+  height: 80%;
+  aspect-ratio: 1/1;
+  background: white;
+  margin: 10px;
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
 }
 #search {
   color: white;
@@ -68,44 +95,45 @@ html {
   font-size: 1.5vw;
   overflow: auto;
   height: 90vh;
-  color: darkgreen;
   display: block;
 }
 .sellHolder{
-  overflow: auto;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   display:flex;
   justify-content: center;
-  gap: 20px;
   z-index: 1;
   columns: 2;
 }
 .uploadpart, .previewpart{
+  background: rgba(103, 176, 146, 0.675);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
   padding: 30px;
-  overflow-y: auto;
 }
-/*.uploadpart{
-  position: fixed;
-  top: 5.2vh;
-}*/
-#innersell {
+.uploadpart{
+  border-right: 5px solid rgb(0,100,7);
+}
+.uploadpart h2, .previewpart h2{
+  font-size: 1.8rem;
+  border-bottom: 2px solid rgb(2, 165, 13);
   width: 100%;
-  height: 85vh;
- 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
-#sell button {
-  width: 150px;
-  font-size: 1.5vw;
-  font-weight: 500;
+.upload-inner-cont{
+ display: grid;
+ gap: 20px;
+ align-items: center;
+ justify-content: center;
+}
+
+.uploadpart button {
+  width: 200px;
+  font-size: 1rem;
+
   padding: 10px 20px;
   background: black;
   border: none;
@@ -113,85 +141,103 @@ html {
   border-radius: 15px;
   transition: .5s;
 }
-#sell button:hover {
+.uploadpart button:hover {
   background: rgba(101, 99, 99, 0.5);
   backdrop-filter: blur(6px);
   border: solid 2px green;
-  color: green;
+  color: rgb(71, 255, 65);
 }
-#sell h3 {
-  width: 100%;
-  height: 10vh;
-  text-align: left;
-  font-size: 1.5rem;
-  padding: 30px;
-  color: white;
-  background: rgba(0,150,50,0.9);
-}
-#backimg {
 
-  border: none;
-  object-fit: cover;
-  overflow: hidden;
-  background: transparent;
-  border-radius: 15px;
-  padding: 5px 5px;
-  width: 100%;
-  height: 210px;
-  backdrop-filter: blur(5px);
- display: inline-block;
-}
-#backimg .note {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-content: center;
-  font-size: 1.5rem;
-}
 .product{
   width: 240px;
   height: 350px;
 }
 #imge-files {
-  color: darkgreen;
-  font-size: 1.5vw;
-  opacity: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 2;
 }
-#product-name {
-  border-radius: 15px;
-  padding: 10px;
-  border: dashed 2px rgba(17, 14, 14,0.5);
-  background: transparent;
-  backdrop-filter: blur(7px);
-  text-align: center;
-}
-#product-price {
-  border-radius: 15px;
-  padding: 10px;
-  border: dashed 2px rgba(17, 14, 14,0.5);
-  background: transparent;
-  backdrop-filter: blur(7px);
-  text-align: center;
-}
-#product-description {
-  border-radius: 15px;
-  padding: 10px 10px;
-  border: dashed 2px rgba(17, 14, 14,0.5);
-  background: transparent;
-  backdrop-filter: blur(7px);
-  text-align: center;
-  top: 4vw;
-  right: 27vw;
-  width: 400px;
-  display: none;
-  height: 150px;
-}
+#uploaderholder{
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  border: 2px solid white;
+  display: grid;
+  place-content: center;
+  padding: 20px;
+  border-radius: 20px;
 
+}
+#product-name, #product-price, #expiry-date, #category {
+  border-radius: 10px;
+  padding: 10px;
+  border: solid 2px white;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(7px);
+  text-align: center;
+  color: white;
+}
+.prev-product{
+  width: 180px;
+  height: 300px;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 10px;
+}
+#backimg {
+
+  border: none;
+  object-fit: contain;
+  overflow: hidden;
+  background: transparent;
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+  border: 2px solid rgb(3, 196, 67);
+  width: 100%;
+  height: 60%;
+  backdrop-filter: blur(5px);
+ display: inline-block;
+}
+.btn-cont{
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color: rgb(3, 196, 67);
+  border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+}
+.productNameView, .productPriceView, .productExpiryDAte{
+  width: 100%;
+  height: 9.5%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.productNameView{
+  background-color: rgb(3, 196, 67);
+}
+.productExpiryDAte{
+  background-color: rgb(224, 120, 79);
+  justify-content: right;
+}
+.mail{
+  background-color: rgb(0, 106, 255);
+  width: 50%;
+  border: none;
+  color: white;
+  border-bottom-left-radius: 10px;
+}
+.whatsapp{
+  background-color: rgb(0, 255, 115);
+  width: 50%;
+  border: none;
+  color: black;
+  border-bottom-right-radius: 10px;
+}
 #chat {
   text-align: center;
   background: url(3.jpg) no-repeat;
@@ -209,9 +255,9 @@ html {
 #chat-holder {
   position: fixed;
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   font-size: 1.5rem;
-  top: 0;
+  top: 10vh;
   overflow-y: auto;
 }
 .chat-message-sender-holder {
@@ -230,6 +276,53 @@ html {
   border: 1px solid lightgreen;
   border-radius: 20px;
   width: 70%;
+}
+.message-container-one{
+  width: 100%;
+      height: auto;
+      padding: 5px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(113, 200, 229, 0.5);
+      margin-top:5px;
+}
+.message-container-two{
+      width: 100%;
+      height: auto;
+      padding: 5px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+     flex-direction: column;
+      background: rgba(93, 219, 93,0.5);
+      margin-top: 5px;
+}
+.message{
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: 5px;
+}
+.user-id-one{
+  font-size: 0.8rem;
+  text-align: left;
+  background: white;
+  padding: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 2px solid black;
+   border-right: 1px solid black;
+}
+.user-id-two{
+  font-size: 0.8rem;
+  text-align: left;
+  background: white;
+  padding: 5px;
+  border-bottom-left-radius: 10px;
+   border-bottom: 2px solid black;
+ border-left: 2px solid black;
 }
 #chat-send {
   color:rgb(4, 112, 4);
@@ -297,8 +390,9 @@ nav button p:hover {
   position: fixed;
   top: 0;
   width:0; 
-height: 20px; 
-  background: teal;
+height: 5px; 
+  background: rgb(0, 128, 90);
+  z-index: 2;
 }
 .cards{
   position: absolute;
@@ -309,23 +403,87 @@ height: 20px;
   bottom: 3vw;
   overflow-y: auto;
 }
+#holder {
+  width: 100%;
+  height: 75vh;
+  overflow-y: auto;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+.productfilters{
+  position: relative;
+  z-index: 3;
+  display: flex;
+  background: rgb(3, 175, 52);
+  gap: 2px;
+  width: 100%;
+  height: 5vh;
+  border-top: 1px solid white;
+}
+.productfilters button{
+  display: grid;
+  place-content: center;
+  padding: 5px 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgb(0, 255, 115);
+  transition: all .5s;
+}
+.productfilters button:hover{
+  background-color: rgb(2, 124, 57);
+  color: white;
+}
 .product {
-  border-radius: 15px;
+  border-radius: 10px;
   background: rgba( 255, 255, 255, 0.7);
   width: 200px;
+  height: 280px;
+  border: 2px solid rgb(0, 128, 90);
   transition: all .3s;
 }
 .product:hover {
-  box-shadow: 2px 2px 10px rgb(0, 0, 0);
-  width: 210px;
+  box-shadow: 2px 2px 10px rgb(76, 243, 5);
 }
-img {
-  border: solid 2px rgba(27, 194, 116,0.4);
-  max-width: 100%;
-  border-radius: 15px;
-  transition: .3s;
+.product-image{
+  width: 100%;
+  height: 60%;
+  border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
 }
-
+.product-name{
+  height: 10%;
+  background: rgb(0,150,50);
+  padding: 5px;
+  color: white;
+}
+.product-price{
+  height: 10%;
+  padding: 5px;
+}
+.product-expire{
+ padding: 5px;
+ height: 10%;
+ text-align: right;
+ background-color: red;
+}
+.btn-container{
+  display: flex;
+  height: 10%;
+}
+.btn-container .mail-real{
+  width: 50%;
+  background-color: rgb(5, 91, 211);
+  border-bottom-left-radius: 10px;
+  
+}
+.btn-container .whatsapp-real{
+  width: 50%;
+  background-color: rgb(5, 211, 91);
+  border-bottom-right-radius: 10px;
+}
 #home{
   display: block;
   
@@ -347,22 +505,7 @@ img {
   z-index: 2000;
 }
 
-#holder {
-  color: rgb(0, 0, 0);
-  font-weight: 800;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  position: absolute;
-  width: 100%;
-  top: 10vh;
-  bottom: 3vh;
-  margin: 20px auto;
-  overflow-y: auto;
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-}
+
 #holder a {
   color: white;
   text-decoration: none;
