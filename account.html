@@ -42,7 +42,7 @@
     </div>
     
 </div>
-       <nav>
+      <nav>
     <button id="to-home">
       <a href="main.html"><span class="material-symbols-outlined">home</span></a>
       
@@ -59,6 +59,18 @@
     <button>
       <a href="weather.html"><span class="material-symbols-outlined">
 cloud
+</span></a>
+      
+    </button>
+    <button>
+      <a href="calender.html"><span class="material-symbols-outlined">
+calendar_month
+</span></a>
+      
+    </button>
+    <button>
+      <a href="price.html"><span class="material-symbols-outlined">
+finance_mode
 </span></a>
       
     </button>
@@ -102,7 +114,7 @@ account_circle
      onAuthStateChanged(auth, (user) => {
   if (user) {
     var userId = user.uid;
-    var userRefer = query(ref(db, "agriaccounts/"));
+    var userRefer = query(ref(db, "users/"));
 
     onValue(userRefer, (snapshot) => {
       var userData = snapshot.val();
