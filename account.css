@@ -1,0 +1,166 @@
+.custom-shape-divider-top-1751717354 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1751717354 svg {
+    position: relative;
+    display: block;
+    width: calc(129% + 1.3px);
+    height: 127px;
+}
+
+.custom-shape-divider-top-1751717354 .shape-fill {
+    fill: rgb(16, 180, 16);
+}
+.tektur-text {
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.account-container{
+    width: 100%;
+    height: 90vh;
+    overflow-y: auto;
+}
+.ball-holder{
+    width: 100%;
+    height: 30vh;
+    background: rgb(16, 180, 16);
+    display: grid;
+    place-content: center;
+}
+.ball{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(16, 180, 16);
+    font-size: 6rem;
+}
+.inner-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    padding-top: 100px;
+    overflow-y: auto;
+}
+.product-cont{
+    width: 100%;
+    height: auto;
+    margin: 5px;
+    padding: 10px;
+    background: rgb(16, 180, 16);
+    border-radius: 5px;
+
+}
+#producthold{
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    place-items: center;
+}
+
+#sign-out{
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    background: rgb(16, 180, 16);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all .5s;
+}
+#sign-out:hover{
+    background: rgb(114, 202, 114);
+    color: black;
+}
+#delete-account{
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    background: rgb(255, 0, 0);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: all .5s;
+}
+#delete-account:hover, #delBtn:hover{
+    background: rgb(223, 121, 121);
+    color: black;
+}
+.myproduct{
+    width: 200px;
+    height: 280px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.imageholder{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.myproductname{
+    padding: 5px;
+    background-color: white;
+    border-top: 2px solid white;
+}
+.myproductprice{
+ padding: 5px;
+}
+#delBtn{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background: rgb(255, 0, 0);
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    transition: all .5s;
+}
