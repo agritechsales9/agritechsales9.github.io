@@ -1,3 +1,33 @@
+.wave-holder{
+    z-index: -1;
+}
+.custom-shape-divider-bottom-1751546375 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1751546375 svg {
+    position: relative;
+    display: block;
+    width: calc(116% + 1.3px);
+    height: 198px;
+}
+
+.custom-shape-divider-bottom-1751546375 .shape-fill {
+    fill: #5AFA0C;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-bottom-1751546375 svg {
+        width: calc(102% + 1.3px);
+        height: 157px;
+    }
+}
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -69,6 +99,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 20px;
     min-height: 100vh;
     background: transparent;
     background-size: cover;
@@ -182,6 +214,10 @@ body {
     color: #fff;
     font-weight: 500;
 }
+.btn:hover{
+    background: rgb(53, 235, 53);
+    color: black;
+}
 
 .login-register {
     font-size: .9em;
@@ -225,7 +261,22 @@ body {
     -webkit-text-stroke: 2px #fff;
     color: transparent;
 }
-
+.image-holder{
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: -20;
+}
+.image-holder img{
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    border: 3px solid green;
+    margin: 10px;
+}
 
 
 
