@@ -18,20 +18,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
  
 </head>
-<body>
+<body class="ubuntu-regular">
 
     <div class="topp">
       <div class="headimg">
          <img src="Untitled design.png"/>
-        <h2 class="tektur-text">AGRI_TECH SALES</h2>
+        <h2 class="tektur-text">AGRI_TECH MARKET</h2>
       </div>
-       <input type="text" id="search"/>
+       <div class="letterhold"></div>
     </div>
+  <div class="productfilters">
+    <button id="allfilter">All</button>
+    <button id="animalfilter">Animals</button>
+    <button id="cropfilter">Crops</button>
+    <button id="fruitfilter">Fruits</button>
+  </div>
           
             <div id="holder">
     </div>
-      <nav>
-    <button id="to-home">
+            <nav>
+    <button id="to-home" style="background: rgb(79, 191, 71);">
       <a href="main.html"><span class="material-symbols-outlined">home</span></a>
       
     </button>
@@ -44,9 +50,15 @@
       
     </button>
     </button>
-    <button id="to-chat">
+    <button>
       <a href="weather.html"><span class="material-symbols-outlined">
 cloud
+</span></a>
+      
+    </button>
+    <button >
+      <a href="account.html"><span class="material-symbols-outlined">
+account_circle
 </span></a>
       
     </button>
@@ -73,6 +85,7 @@ cloud
     const storage = getStorage(app);
 
     const productsQuery = query(ref(db, 'products/'), orderByChild('timestamp'));
+    var holder = document.querySelector('#holder');
 
     onValue(productsQuery, (snapshot) => {
       holder.innerHTML = "";
@@ -80,6 +93,7 @@ cloud
 
       Object.keys(data).sort((a, b) => data[a].timestamp - data[b].timestamp).forEach((key) => {
         const productData = data[key];
+       
         const product = document.createElement("div");
         const productName = document.createElement("div");
         const productPrice = document.createElement("div");
@@ -97,31 +111,30 @@ cloud
         getDownloadURL(imageRef)
           .then((downloadURL) => {
             image.setAttribute("src", downloadURL);
+             holder.innerHTML += `<div id="${productData.category}" class="product">
+            <img class="product-image" src="${downloadURL}"/>
+            <div class="product-name ubuntu-regular">${productData.productName}</div>
+            <div class="product-price ubuntu-regular">${productData.productPrice}</div>
+            <div class="product-expire">${productData.expirydate}</div>
+                <div class="btn-container">
+        <a href="mailto:${productData.emailink}" class="mail-real"><span class="material-symbols-outlined">
+mail
+</span></a>
+<a href="https://wa.me/${productData.telnumber}" class="whatsapp-real"><span class="material-symbols-outlined">
+business_messages
+</span></a>
+      </div>
+            </div>`;
           })
           .catch((error) => {
             console.error("Error fetching image:", error);
             image.setAttribute("alt", "Image not available"); 
           });
-        emailink.innerHTML = "Email";
-        emailink.setAttribute("href", "mailto:" + productData.emailink);
-        productName.innerHTML = productData.productName;
-        productPrice.innerHTML = productData.productPrice;
-        description.innerHTML = productData.productDescription;
-
-        productName.className = "product-name";
-        productPrice.className = "product-price";
-        description.className = "description";
-
-        product.appendChild(productName);
-        product.appendChild(productPrice);
-        product.appendChild(emailink);
-        product.appendChild(description);
-
-        product.className = "product";
-        holder.appendChild(product);
+     
       });
     });
 
+    
    
 
 </script>
