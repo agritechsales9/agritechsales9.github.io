@@ -5,7 +5,6 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/x-icon" href="Untitled design.png"/>
   <link rel="stylesheet" href="login.css"> 
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -18,40 +17,47 @@
    <div class="topp">
       <div class="headimg">
          <img src="Untitled design.png"/>
-        <h2 class="tektur-text">AGRI_TECH SALES</h2>
+        <h2 class="tektur-text">Agri_Tech Weather Forecast System</h2>
       </div>
-       
+       <div class="letterhold"></div>
     </div>
-    <div class="container">
-        <h1>Weather Forecast</h1>
-
-        <div id="weather-info">
-            <table id="weather-table">
-                <tr>
-                    <th>Location</th>
-                    <th>Temperature</th>
-                    <th>Weather</th>
-                    <th>Humidity</th>
-                    <th>Wind Speed</th>
-                    <th>Rain</th>
-                    <th>Sunshine</th>
-                </tr>
-                <tr>
-                    <td id="location"></td>
-                    <td id="temperature"></td>
-                    <td id="weather"></td>
-                    <td id="humidity"></td>
-                    <td id="wind-speed"></td>
-                    <td id="rain"></td>
-                    <td id="sunshine"></td>
-                </tr>
-            </table>
-
-            <!---<h2>Hourly Forecast</h2>
-            <div id="hourly-forecast"></div>-->
-        </div>
+     <div class="container">
+    <!-- Live Weather Section -->
+    <div class="section" id="live-weather">
+      <h2>Live Weather</h2>
+      <p><strong>Location:</strong> <span id="location">Loading...</span></p>
+      <p><strong>Temperature:</strong> <span id="temperature">--</span></p>
+      <p><strong>Weather:</strong> <span id="weather">--</span></p>
+      <p><strong>Humidity:</strong> <span id="humidity">--</span></p>
+      <p><strong>Wind Speed:</strong> <span id="wind-speed">--</span></p>
+      <p><strong>Rain:</strong> <span id="rain">--</span></p>
+      <p><strong>Sunshine:</strong> <span id="sunshine">--</span></p>
     </div>
-    <nav>
+
+    <!-- Monthly Forecast -->
+    <div class="section" id="forecast">
+      <h2>Monthly Forecast (July)</h2>
+      <div id="monthly-forecast"></div>
+    </div>
+
+    <!-- Agricultural Insights -->
+    <div class="section" id="agriculture-insights">
+      <h2>Agricultural Insights</h2>
+      <ul>
+        <li>Expected rainfall: <span id="rainfall">--</span> mm</li>
+        <li>Best days for planting: <span id="planting-days">--</span></li>
+        <li>Pest risk: <span id="pest-risk">--</span></li>
+      </ul>
+    </div>
+
+    <!-- Alerts Section -->
+    <div class="section" id="alerts">
+      <h2>Weather Alerts</h2>
+      <p id="alerts-content">No alerts at the moment.</p>
+    </div>
+  </div>
+
+<nav>
     <button id="to-home">
       <a href="main.html"><span class="material-symbols-outlined">home</span></a>
       
@@ -65,9 +71,15 @@
       
     </button>
     </button>
-    <button id="to-chat">
+    <button  style="background: rgb(79, 191, 71);">
       <a href="weather.html"><span class="material-symbols-outlined">
 cloud
+</span></a>
+      
+    </button>
+    <button>
+      <a href="account.html"><span class="material-symbols-outlined">
+account_circle
 </span></a>
       
     </button>
