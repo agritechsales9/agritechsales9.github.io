@@ -86,12 +86,6 @@
     const db = getDatabase(app);
     const auth = getAuth(app);
 
-       onAuthStateChanged(auth, (user) => {
-  if (user) {
-    window.location.href = 'main.html';
-  } 
-     });
-    
     const usernameHolder = document.querySelector('#username');
     const emailHolder = document.querySelector('#email');
     const passwordHolder = document.querySelector('#passcode');
@@ -108,13 +102,14 @@
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          const userRef = push(ref(db, 'users/'));
-          return set(userRef, {
-            username: username,
-            email: email,
-            phonenumber: telNo,
-            uid: user.uid
-          });
+          const userRef = ref(db, 'users/' + user.uid);
+return set(userRef, {
+  username: username,
+  email: email,
+  phonenumber: telNo,
+  uid: user.uid
+});
+
         })
         .then(() => {
           window.location.href = 'main.html';
@@ -126,6 +121,7 @@
         alert('Please fill all the fields.');
       }
     });
+    
   </script>
 </body>
 </html>
