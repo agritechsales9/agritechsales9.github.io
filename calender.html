@@ -23,6 +23,7 @@
          <img src="Untitled design.png"/>
         <h2 class="tektur-text">AGRI_TECH FARMING CALENDER</h2>
       </div>
+      <div class="letterhold"></div>
     </div>
 
   <main>
@@ -113,6 +114,12 @@ finance_mode
 </span></a>
       
     </button>
+       <button>
+      <a href="ai.html"><span class="material-symbols-outlined">
+network_intelligence
+</span></a>
+      
+    </button>
     <button>
       <a href="account.html"><span class="material-symbols-outlined">
 account_circle
@@ -120,5 +127,59 @@ account_circle
       
     </button>
   </nav>
+  <script type="module">
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import { getDatabase, ref, set, get, push, onValue, remove, orderByChild, query, update } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+    import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-storage.js";
+    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC7fCNZe8l-fGhhKsMF0JVcymh8uCv1zyI",
+      authDomain: "lavender-app-eeeb0.firebaseapp.com",
+      databaseURL: "https://lavender-app-eeeb0-default-rtdb.firebaseio.com",
+      projectId: "lavender-app-eeeb0",
+      storageBucket: "lavender-app-eeeb0.appspot.com",
+      messagingSenderId: "666797584961",
+      appId: "1:666797584961:web:8d9576c372d72fe0938cc0",
+      measurementId: "G-ECZ1J6F0KK"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const storage = getStorage(app);
+    var auth = getAuth(app);
+
+        var urName = document.querySelector('#urname');
+        var telNumber = document.querySelector('#telnumber');
+        var senderEmail = document.querySelector('#sender');
+    
+
+      
+
+     var letterHolder = document.querySelector('.letterhold');
+    onAuthStateChanged(auth, (user) => {
+  if (user) {
+    var userId = user.uid;
+    var userRefer = query(ref(db, "users/"));
+
+    onValue(userRefer, (snapshot) => {
+      var userData = snapshot.val();
+
+      if (userData) {
+        Object.keys(userData).forEach((key) => {
+          if (userData[key].uid === userId) {
+            const userInfo = userData[key];
+
+            const firstLetter = userInfo.username.charAt(0).toUpperCase();
+            letterHolder.innerHTML = firstLetter;
+          }
+        });
+      }
+    });
+  }
+});
+
+    </script>
 </body>
 </html>
