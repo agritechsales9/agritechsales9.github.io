@@ -79,7 +79,9 @@ business_messages
   </div>
 <nav>
     <button id="to-home">
-      <a href="main.html"><span class="material-symbols-outlined">home</span></a>
+      <a href="main.html"><span class="material-symbols-outlined">
+local_mall
+</span></a>
       
     </button>
     <button style="background: rgb(79, 191, 71);" id="to-sell">
@@ -109,6 +111,12 @@ finance_mode
 </span></a>
       
     </button>
+       <button>
+      <a href="ai.html"><span class="material-symbols-outlined">
+network_intelligence
+</span></a>
+      
+    </button>
     <button>
       <a href="account.html"><span class="material-symbols-outlined">
 account_circle
@@ -116,6 +124,7 @@ account_circle
       
     </button>
   </nav>
+  
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
     import { getDatabase, ref, set, get, push, onValue, remove, orderByChild, query, update } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
@@ -142,10 +151,11 @@ account_circle
         var urName = document.querySelector('#urname');
         var telNumber = document.querySelector('#telnumber');
         var senderEmail = document.querySelector('#sender');
-        var letterholdder = document.querySelector('.letterhold');
+    
 
       
 
+     var letterHolder = document.querySelector('.letterhold');
     onAuthStateChanged(auth, (user) => {
   if (user) {
     var userId = user.uid;
@@ -159,9 +169,6 @@ account_circle
           if (userData[key].uid === userId) {
             const userInfo = userData[key];
 
-               urName.innerHTML = userData[key].username;
-          senderEmail.innerHTML = userData[key].email;
-          telNumber.innerHTML = userData[key].phonenumber;
             const firstLetter = userInfo.username.charAt(0).toUpperCase();
             letterHolder.innerHTML = firstLetter;
           }
@@ -170,6 +177,7 @@ account_circle
     });
   }
 });
+
 
 
 
